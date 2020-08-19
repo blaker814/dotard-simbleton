@@ -114,3 +114,17 @@ const businesses = [
   export const allBusinesses = () => {
     return businesses.slice()
 }
+
+export const newYorkBusinesses = businesses.filter(busObj => {
+    if (busObj.addressStateCode === "NY") {
+        return true
+    }
+    return false
+})
+
+export const manufacturingBusinesses = businesses.filter(busObj => {
+    if (busObj.companyIndustry === "Manufacturing") {
+        return true
+    }
+    return false
+})
