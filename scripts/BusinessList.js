@@ -1,13 +1,14 @@
-import { allBusinesses, purchaserNames } from "./BusinessProvider.js"
+import { allBusinesses, purchaserNames, findPurchaser } from "./BusinessProvider.js"
 import { newYorkBusinesses } from "./BusinessProvider.js"
 import { manufacturingBusinesses } from "./BusinessProvider.js"
 import { Company } from "./Business.js"
 
 
 const contentTarget = document.querySelector("main")
+const businessArray = allBusinesses();
 
 export const BusinessList = () => {
-    const businessArray = allBusinesses();
+    businessArray = allBusinesses();
     contentTarget.innerHTML = "<h1>Active Businesses</h1>"
 
     businessArray.forEach(
@@ -57,3 +58,26 @@ export const PurchaserList = () => {
         }
     );
 }
+
+const companySearchResultArticle = document.querySelector(".foundPurchasers")
+
+document
+    .querySelector("#purchaserSearch")
+    .addEventListener("keypress", keyPressEvent => {
+        if (keyPressEvent.charCode === 13) {
+            
+            const foundPurchaser = findPurchaser(keyPressEvent.target.value);
+    
+            companySearchResultArticle.innerHTML = `
+                <h2>
+                ${foundPurchaser.purchasingAgent.nameFirst} ${foundPurchaser.purchasingAgent.nameLast}
+                </h2>
+                <section class="compName">
+                <h3>${foundPurchaser.companyName}</h3>
+                </section>
+                <section>
+                ${foundPurchaser.phoneWork}
+                </section>
+            `;
+        }
+     } );

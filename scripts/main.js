@@ -9,7 +9,7 @@ for (const business of allTheBusinesses) {
     console.log(business)
 }
 
-BusinessList();
-NewYorkBusinessList();
-ManufacturingBusinessList();
-PurchaserList();
+// BusinessList();
+// NewYorkBusinessList();
+// ManufacturingBusinessList();
+// PurchaserList();

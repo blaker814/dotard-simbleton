@@ -9,8 +9,3 @@ export const Company = (busObj) => {
         </section>
     `
 }
-
-export const Purchaser = (busObj) => {
-    return `
-    `
-}

@@ -136,3 +136,7 @@ export const purchaserNames = businesses.map(busObj => {
     phoneNumber: busObj.phoneWork
   }
 })
+
+export const findPurchaser = (nameCriteria) => {
+  return businesses.find(business => business.purchasingAgent.nameFirst.includes(nameCriteria) || business.purchasingAgent.nameLast.includes(nameCriteria))
+}
