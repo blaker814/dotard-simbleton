@@ -116,15 +116,22 @@ const businesses = [
 }
 
 export const newYorkBusinesses = businesses.filter(busObj => {
-    if (busObj.addressStateCode === "NY") {
-        return true
-    }
-    return false
+  if (busObj.addressStateCode === "NY") {
+      return true
+  }
+  return false
 })
 
 export const manufacturingBusinesses = businesses.filter(busObj => {
-    if (busObj.companyIndustry === "Manufacturing") {
-        return true
-    }
-    return false
+  if (busObj.companyIndustry === "Manufacturing") {
+      return true
+  }
+  return false
 })
+
+export const purchaserNames = businesses.map(busObj => {
+  return {
+    fullName: busObj.purchasingAgent.nameFirst + " " + busObj.purchasingAgent.nameLast,
+    company: busObj.companyName,
+    phoneNumber: busObj.phoneWork
+  }

@@ -1,3 +1,4 @@
+import { allBusinesses, purchaserNames } from "./BusinessProvider.js"
 import { allBusinesses } from "./BusinessProvider.js"
 import { newYorkBusinesses } from "./BusinessProvider.js"
 import { manufacturingBusinesses } from "./BusinessProvider.js"
@@ -43,3 +44,17 @@ export const ManufacturingBusinessList = () => {
     );
 }
 
+export const PurchaserList = () => {
+    const purchaserArray = purchaserNames;
+    contentTarget.innerHTML = "<h2>Purchasing Agents</h2>"
+
+    purchaserArray.forEach(
+        (purchaser) => {
+            contentTarget.innerHTML += `<article class="agents">
+            <h3>${purchaser.fullName}</h3>
+                <p>${purchaser.company}</p>
+                <p>${purchaser.phoneNumber}</p>
+        </article>`
+        }
+    );
+}

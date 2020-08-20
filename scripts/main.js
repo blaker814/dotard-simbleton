@@ -1,4 +1,5 @@
 import { allBusinesses } from './BusinessProvider.js'
+import { BusinessList, PurchaserList } from './BusinessList.js'
 import { BusinessList } from './BusinessList.js'
 import { NewYorkBusinessList } from './BusinessList.js'
 import { ManufacturingBusinessList } from './BusinessList.js'
@@ -12,3 +13,4 @@ for (const business of allTheBusinesses) {
 BusinessList();
 NewYorkBusinessList();
 ManufacturingBusinessList();
+PurchaserList();
