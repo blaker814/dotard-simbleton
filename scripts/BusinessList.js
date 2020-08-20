@@ -1,5 +1,4 @@
 import { allBusinesses, purchaserNames } from "./BusinessProvider.js"
-import { allBusinesses } from "./BusinessProvider.js"
 import { newYorkBusinesses } from "./BusinessProvider.js"
 import { manufacturingBusinesses } from "./BusinessProvider.js"
 import { Company } from "./Business.js"

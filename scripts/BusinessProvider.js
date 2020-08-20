@@ -135,3 +135,4 @@ export const purchaserNames = businesses.map(busObj => {
     company: busObj.companyName,
     phoneNumber: busObj.phoneWork
   }
+})
